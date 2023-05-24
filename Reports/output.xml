@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.7 on win32)" generated="20230310 17:17:39.679" rpa="false" schemaversion="3">
+<suite id="s1" name="Api Test" source="C:\Users\Owner\PycharmProjects\RobotFramework_Automation_Practice\Api_Test.robot">
+<test id="s1-t1" name="Delete a pet in pet store" line="48">
+<kw name="DELETE" library="RequestsLibrary">
+<var>${response}</var>
+<arg>https://petstore.swagger.io/v2/pet/9223372036854775807</arg>
+<doc>Sends a DELETE request.</doc>
+<msg timestamp="20230310 17:17:43.905" level="INFO">DELETE Request : url=https://petstore.swagger.io/v2/pet/9223372036854775807 
+ path_url=/v2/pet/9223372036854775807 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg timestamp="20230310 17:17:43.905" level="INFO">DELETE Response : url=https://petstore.swagger.io/v2/pet/9223372036854775807 
+ status=404, reason=Not Found 
+ headers={'Date': 'Fri, 10 Mar 2023 15:17:42 GMT', 'Content-Length': '0', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, PUT', 'Access-Control-Allow-Headers': 'Content-Type, api_key, Authorization', 'Server': 'Jetty(9.2.9.v20150224)'} 
+ body=None 
+ </msg>
+<msg timestamp="20230310 17:17:43.905" level="FAIL">HTTPError: 404 Client Error: Not Found for url: https://petstore.swagger.io/v2/pet/9223372036854775807</msg>
+<status status="FAIL" starttime="20230310 17:17:43.155" endtime="20230310 17:17:44.124"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="NOT RUN" starttime="20230310 17:17:44.124" endtime="20230310 17:17:44.124"/>
+</kw>
+<doc>This test should delete a pet</doc>
+<tag>Kinsoo</tag>
+<status status="FAIL" starttime="20230310 17:17:43.155" endtime="20230310 17:17:44.124">HTTPError: 404 Client Error: Not Found for url: https://petstore.swagger.io/v2/pet/9223372036854775807</status>
+</test>
+<doc>Automate API responses for pet store</doc>
+<status status="FAIL" starttime="20230310 17:17:39.695" endtime="20230310 17:17:44.140"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Kinsoo</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Api Test">Api Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
